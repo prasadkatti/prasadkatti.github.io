@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Technical Debt"
-date:   2018-03-24 15:10:03 -0800
+date:   2018-03-24 08:10:03 -0800
 categories: tech
 ---
 

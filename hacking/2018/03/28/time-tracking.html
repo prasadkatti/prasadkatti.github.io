@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Prasad Katti&#39;s personal website</title>
-  <meta name="description" content="Prasad Katti uses this space to blog about his random thoughts, software development, travel and his beloved Arsenal.">
+  <title>Time tracking</title>
+  <meta name="description" content="I noticed today that I had RescueTime installed on my mac. I must have installed it long back because I don’t remember ever going to the dashboard to look at...">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="/">
+  <link rel="canonical" href="/hacking/2018/03/28/time-tracking.html">
   <link rel="alternate" type="application/rss+xml" title="Prasad Katti&#39;s personal website" href="/feed.xml">
   
   
@@ -60,52 +60,42 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="home">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <h1 class="page-heading">Posts</h1>
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Time tracking</h1>
+    <p class="post-meta"><time datetime="2018-03-28T16:10:03+00:00" itemprop="datePublished">Mar 28, 2018</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I noticed today that I had <a href="https://www.rescuetime.com/">RescueTime</a> installed on my mac. I must have installed it long back because I don’t remember ever going to the dashboard to look at the reports.</p>
+
+<p>So the way RescueTime works is you install a small application on your mac/PC and it sends information about how you spend your time to their servers in the cloud. With all the talk about privacy and given that I never even look at the dashboard, I decided to uninstall the application and delete my account. But I thought I would look at the dashboard one last time. The dashboard shows you which application you used and for how long. It also figures out which webpages you visited and how much time you spent on them.</p>
+
+<p>I was curious about how all of this works. So I went through their <a href="https://www.rescuetime.com/faq">FAQs</a> and they just get the information about the application running in the foreground. That got me curious on how one would go about programatically determining the application that is active. A simple google search took me to this SuperUser page - 
+<a href="https://superuser.com/questions/734007/how-do-i-tell-which-app-stole-my-focus-in-os-x">how-do-i-tell-which-app-stole-my-focus-in-os-x</a></p>
+
+<p>This snippet will print the app which has focus at one second intervals.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#!/usr/bin/python                                                                                                       </span>
+
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+<span class="kn">from</span> <span class="nn">AppKit</span> <span class="kn">import</span> <span class="n">NSWorkspace</span>
+
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">NSWorkspace</span><span class="o">.</span><span class="n">sharedWorkspace</span><span class="p">()</span><span class="o">.</span><span class="n">activeApplication</span><span class="p">()</span>
+    <span class="k">print</span> <span class="p">(</span><span class="n">app</span><span class="p">[</span><span class="s">'NSApplicationName'</span><span class="p">])</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span></code></pre></figure>
+
+<p>Demo -</p>
+
+<script src="https://asciinema.org/a/C53JeN00DKZoU5P48Oiz64gop.js" id="asciicast-C53JeN00DKZoU5P48Oiz64gop" async=""></script>
+
+
+  </div>
+
   
-  
-
-
-  <ul class="post-list">
-    
-      <li>
-        <span class="post-meta">Mar 28, 2018</span>
-
-        <h2>
-          <a class="post-link" href="/hacking/2018/03/28/time-tracking.html">Time tracking</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Mar 24, 2018</span>
-
-        <h2>
-          <a class="post-link" href="/tech/2018/03/24/techincal-debt.html">Technical Debt</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Apr 15, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/projects/2017/04/15/py-hangman.html">Py-Hangman</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Apr 3, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/travel/2017/04/03/fort-funston.html">Fort Funston</a>
-        </h2>
-      </li>
-    
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
-
-</div>
+</article>
 
       </div>
     </main>

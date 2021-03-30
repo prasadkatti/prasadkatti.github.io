@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<div>prasadkatti has [10 commits](./kubernetes-kubernetes.md) in kubernetes/kubernetes</div>
+prasadkatti has [10 commits](./kubernetes-kubernetes.md) in kubernetes/kubernetes
 <div>prasadkatti has [10 commits](./kubernetes-kubernetes.md) in kubernetes/kubernetes</div>
 <div>prasadkatti has [10 commits](kubernetes-kubernetes.md) in kubernetes/kubernetes</div>
 
